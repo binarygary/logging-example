@@ -33,9 +33,9 @@ class Plugin {
 
 		// These are just examples.
 		add_action( 'shutdown', function() {
-			do_action( 'log_this', 'Shutdown Action', 'success', 1 );
-			do_action( 'log_this', 'Shutdown Action', 'failure', 1 );
-			do_action( 'log_this', 'Shutdown Action', 'information', 1 );
+			do_action( 'log_this', 'Shutdown Success Action', 'success', 1 );
+			do_action( 'log_this', 'Shutdown Failure Action', 'failure', 1 );
+			do_action( 'log_this', 'Shutdown Information Action', 'information', 1 );
 		} );
 	}
 
@@ -50,7 +50,7 @@ class Plugin {
 		// Iterate through all Loggers in the collection.
 		foreach ( $this->logger_collection  as $logger ) {
 			// If the type that was passed is a legit log type, we run that method.
-			// The method is known to exist because the list of types matches the methods in the Interface we extend.
+			// The method is known to exist because the list of types match the methods in the Interface we extend.
 			if ( in_array( $type, Logger_Collection::LOG_TYPES, true ) ) {
 				$logger->$type( $message, $id );
 			}
