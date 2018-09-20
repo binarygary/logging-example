@@ -1,0 +1,15 @@
+{
+  "name": "binarygary/logging-example",
+  "type": "worpdpress plugin",
+  "description": "An example of the iterator interface and splat operator (variadics).",
+  "license": "gpl v2",
+  "config": {
+    "vendor-dir": "vendor",
+    "preferred-install": "dist"
+  },
+  "autoload": {
+    "psr-4": {
+      "Logger\\": "src/"
+    }
+  }
+}
